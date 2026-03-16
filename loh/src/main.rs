@@ -1,17 +1,61 @@
+//Declarations
+
 /**
 * Block in transaction
 */
 pub struct Block {
-    pub id: u64,
-    pub hash: String,
-    pub previous_hash: String,
-    pub time: i64,
-    pub txn_data: String,
-    pub nonce: u64,
+    id: u64,
+    hash: String,
+    previous_hash: String,
+    time: i64,
+    txn_data: String,
+    nonce: u64,
 }
 
 pub struct Blockchain {
-    pub blocks: Vec<Block>,
+    blocks: Vec<Block>,
+}
+
+//Implementations
+
+impl Block {
+    pub fn new(
+        id: u64,
+        hash: String,
+        previous_hash: String,
+        time: i64,
+        txn_data: String,
+        nonce: u64,
+    ) -> Block {
+        Self {
+            id,
+            hash,
+            previous_hash,
+            time,
+            txn_data,
+            nonce,
+        }
+    }
+
+    pub fn get_id(&self) -> u64 {
+        self.id
+    }
+
+    pub fn get_hash(&self) -> &str {
+        &self.hash
+    }
+    pub fn get_previous_hash(&self) -> &str {
+        &self.previous_hash
+    }
+    pub fn get_time(&self) -> i64 {
+        self.time
+    }
+    pub fn get_txn_data(&self) -> &str {
+        &self.txn_data
+    }
+    pub fn get_nonce(&self) -> u64 {
+        self.nonce
+    }
 }
 
 impl Blockchain {
@@ -28,5 +72,5 @@ impl Blockchain {
 }
 
 fn main() {
-    let mut blockchain = Blockchain { blocks: vec![] };
+    let blockchain = Blockchain::new();
 }
