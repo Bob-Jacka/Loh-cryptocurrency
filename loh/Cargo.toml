@@ -4,3 +4,7 @@ version = "0.0.1"
 edition = "2024"
 
 [dependencies]
+bincode = "3.0.0"
+serde = { version = "1.0.228", features = ["derive"] }
+sled = "0.34.7"
+rand = "0.10.0"

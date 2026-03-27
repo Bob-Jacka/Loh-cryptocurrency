@@ -1,13 +1,12 @@
+mod base_types;
 mod block;
 mod blockchain;
-pub mod base_types;
+mod data_save;
 mod node;
 mod server;
 mod tests;
-mod wallet;
 mod transaction;
-mod data_save;
-pub mod Tests;
+mod wallet;
 
 use std::sync::{Arc, Mutex};
 use std::thread;
